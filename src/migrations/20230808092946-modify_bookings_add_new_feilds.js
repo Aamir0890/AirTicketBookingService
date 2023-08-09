@@ -40,3 +40,6 @@ module.exports = {
     await queryInterface.removeColumn('Bookings','Price')
   }
 };
+
+
+//added column for recognize the incremental change
