@@ -1,8 +1,12 @@
 const express=require('express')
-const {BookingController}=require('../../controller/index')
+
+const{ BookingController }=require('../../controller/index')
 
 const router=express.Router();
 
-router.post('/booking',BookingController.create);
 
+const bookingController=new BookingController();
+
+router.post('/booking',bookingController.create);
+router.post('/publish',bookingController.sendMessageToQueue)
 module.exports=router
